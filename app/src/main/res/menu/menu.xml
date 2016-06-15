@@ -7,6 +7,12 @@
         android:title = "navigate to other activity"
         app:showAsAction= "ifRoom"/>
 
+    <item
+        android:id="@+id/menu_login_button"
+        android:icon="@drawable/ic_action_name"
+        android:title = "navigate to login"
+        app:showAsAction= "ifRoom"/>
+
     <!-- hahahahahah -->
 
 </menu>

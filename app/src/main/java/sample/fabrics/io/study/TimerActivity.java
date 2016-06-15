@@ -71,7 +71,8 @@ public class TimerActivity extends AppCompatActivity {
                 start.setText("Start");
                 handler.removeCallbacks(updateTimer);
                 timer.setText("00:00:00");
-            }});
+            }
+        });
     }
 
     public Runnable updateTimer = new Runnable() {
@@ -82,13 +83,14 @@ public class TimerActivity extends AppCompatActivity {
             mins = secs / 60;
             secs = secs % 60;
             hour = mins / 60;
-            timer.setText(""+ String.format("%02d", hour) + ":" + String.format("%02d", mins) + ":" + String.format("%02d", secs));
+            timer.setText("" + String.format("%02d", hour) + ":" + String.format("%02d", mins) + ":" + String.format("%02d", secs));
             timer.setTextColor(Color.RED);
             handler.postDelayed(this, 0);
-        }};
+        }
+    };
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu){
+    public boolean onCreateOptionsMenu(Menu menu) {
         //draws a menu on the android screen
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
@@ -96,8 +98,8 @@ public class TimerActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        switch(item.getItemId()){
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
             case R.id.menu_plus_button:
                 Intent i = new Intent(TimerActivity.this, LogView.class);
                 startActivity(i);
@@ -107,5 +109,5 @@ public class TimerActivity extends AppCompatActivity {
 
         }
     }
-}
 
+}
