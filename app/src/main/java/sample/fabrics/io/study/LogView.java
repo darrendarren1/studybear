@@ -8,7 +8,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ExpandableListView;
 import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -19,6 +22,22 @@ public class LogView extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_view);
+
+        String[] foods = {"Bacon", "Yogurt", "Yolo", "Test", "Test2", "Test3", "Test4", "Test5", "Test6",
+                "Test7", "Test8", "Test9", "Test10", "Test11", "Test12", "Test13"};
+        ListAdapter buckyAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, foods);
+        ListView buckyListView = (ListView) findViewById(R.id.buckys_list_view);
+        buckyListView.setAdapter(buckyAdapter);
+
+        buckyListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+                String food = String.valueOf(parent.getItemAtPosition(position));
+                Toast.makeText(LogView.this, food, Toast.LENGTH_LONG).show();
+
+            }
+        });
+
     }
 }
 //        final ListView listview = (ListView) findViewById(R.id.listview);
