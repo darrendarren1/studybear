@@ -1,3 +1,33 @@
 <resources>
-    <string name="app_name">Study</string>
+    <string name="app_name">study.</string>
+
+    <string name="title_activity_scrolling">ScrollingActivity</string>
+
+    <string name="action_settings">Settings</string>
+    <!-- Strings related to login // Added from Login file -->
+    <string name="prompt_name">Name</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (must be greater than 4 characters)</string>
+    <string name="action_sign_up">Sign up</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_name">Name is invalid</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="register_in"> Create an account</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="formTitle">Post-Study Reflection</string>
+    <string name="timer_label">Time</string>
+    <string name="timer_text">Here is the time.</string>
+    <string name="location_label">Location</string>
+    <string name="locationInput_label">Where did you study?</string>
+    <string name="pro_title_label">Productivity Rating</string>
+    <string name="ppl_title_label">How do you study with other people?</string>
+    <string name="notes_title_label">Notes</string>
+    <string name="notes_hint">Enter additional notes here (if you want to!).</string>
+    <string name="submitText">Submit</string>
 </resources>

@@ -1,34 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/icon"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_margin="5dp"
-        android:src="@mipmap/ic_launcher"/>
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_margin="7dp"
+        android:text="00:00"
+        android:textSize = "45sp"/>
+        <!--android:src="@mipmap/ic_launcher"/>-->
 
     <TextView
         android:id="@+id/firstLine"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="Description"
-        android:textSize="12sp" />
+        android:layout_toRightOf="@+id/time"
+        android:layout_marginTop="5dp"
+        android:text="June 7"
+        android:maxLines="1"
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/secondLine"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_above="@id/secondLine"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignWithParentIfMissing="true"
-        android:layout_toRightOf="@id/icon"
-        android:gravity="center_vertical"
-        android:text="Example application"
-        android:textSize="16sp" />
+        android:layout_below = "@+id/firstLine"
+        android:layout_toRightOf="@+id/time"
+        android:maxLines="1"
+        android:text="Productivity: Lower"
+        android:textSize="15sp" />
+    <TextView
+        android:id="@+id/thirdLine"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below = "@+id/secondLine"
+        android:layout_toRightOf="@+id/time"
+        android:maxLines="1"
+        android:text="10:27 pm"
+        android:textSize="15sp" />
+    <TextView
+        android:id="@+id/notes"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:layout_toRightOf="@+id/time"
+        android:maxLines="3"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="120dp"
+        android:text="HelloWorldHelloWorldHelloWorldHelloWorld
+        HelloWorldHelloWorldHelloWorld"
+        android:textSize="15sp" />
 
-</LinearLayout>
+</RelativeLayout>

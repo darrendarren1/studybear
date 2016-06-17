@@ -8,11 +8,17 @@
         app:showAsAction= "ifRoom"/>
 
     <item
-        android:id="@+id/menu_login_button"
-        android:icon="@drawable/ic_action_name"
-        android:title = "navigate to login"
+        android:id="@+id/menu_home_button"
+        android:icon="@drawable/ic_action_home"
+        android:title = "navigate to home"
         app:showAsAction= "ifRoom"/>
 
-    <!-- hahahahahah -->
+
+    <item
+        android:id="@+id/menu_sign_out"
+        android:icon="@drawable/ic_action_name"
+        android:title = "log off"
+        app:showAsAction= "ifRoom"/>
+
 
 </menu>

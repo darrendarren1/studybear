@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "55508735206",
+    "firebase_url": "https://study-46dc7.firebaseio.com",
+    "project_id": "study-46dc7",
+    "storage_bucket": "study-46dc7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55508735206:android:0362eaac157aa871",
+        "android_client_info": {
+          "package_name": "sample.fabrics.io.study"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "55508735206-rtijs8u1ll8lr1hrr7f9s211c5fvgoat.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAM0PEPl0L5qnC4-pARISwA7JOiTvUHVPk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

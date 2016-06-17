@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="600dp"
+    android:layout_height="600dp"
+    android:focusableInTouchMode="false"
+    android:weightSum="1"
+    android:orientation="horizontal"
+    android:foregroundGravity="center_vertical">
+
+    <ImageView
+        android:layout_width="362dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:id="@+id/imageView3"
+        android:src="@mipmap/main_logo"
+        android:contentDescription="" />
+
+
+    <ImageView
+        android:layout_width="374dp"
+        android:layout_height="150dp"
+        android:id="@+id/imageView2"
+        android:src="@mipmap/studybear_logo"
+        android:padding="5dp"
+        android:tintMode="screen"
+        android:layout_gravity="top"
+        android:layout_below="@+id/imageView3"
+        android:theme="@style/Base.Theme.AppCompat.Light"
+        />
+
+</RelativeLayout>

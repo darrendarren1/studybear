@@ -1,103 +1,68 @@
 package sample.fabrics.io.study;
 
 import android.app.Activity;
-import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ExpandableListView;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import com.parse.ParseUser;
 
-public class LogView extends Activity {
 
+public class LogView extends AppCompatActivity {
+
+    private CustomAdapter taskAdapter;
+    private ListView listView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_view);
+        listView = (ListView) findViewById(R.id.list_view);
+        taskAdapter = new CustomAdapter(this);
+        listView.setAdapter(taskAdapter);
+    }
 
-        String[] foods = {"Bacon", "Yogurt", "Yolo", "Test", "Test2", "Test3", "Test4", "Test5", "Test6",
-                "Test7", "Test8", "Test9", "Test10", "Test11", "Test12", "Test13"};
-        ListAdapter buckyAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, foods);
-        ListView buckyListView = (ListView) findViewById(R.id.buckys_list_view);
-        buckyListView.setAdapter(buckyAdapter);
+    @Override
+    protected void onResume(){
+        super.onResume();
+        taskAdapter.notifyDataSetChanged();
+    }
 
-        buckyListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-                String food = String.valueOf(parent.getItemAtPosition(position));
-                Toast.makeText(LogView.this, food, Toast.LENGTH_LONG).show();
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        //draws a menu on the android screen
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
+            case R.id.menu_plus_button:
+                Intent i = new Intent(LogView.this, LogView.class);
+                startActivity(i);
+                return true;
+            case R.id.menu_home_button:
+                Intent j = new Intent(LogView.this, TimerActivity.class);
+                startActivity(j);
+                return true;
+            case R.id.menu_sign_out:
+                ParseUser.logOut();
+                ParseUser currentUser = ParseUser.getCurrentUser();
+                startActivity(new Intent(LogView.this, RegisterActivity.class));
+            default:
+                return super.onOptionsItemSelected(item);
 
-            }
-        });
+        }
+    }
 
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(LogView.this, TimerActivity.class);
+        startActivity(i);
     }
 }
-//        final ListView listview = (ListView) findViewById(R.id.listview);
-//        String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
-//                "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
-//                "Linux", "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux",
-//                "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2",
-//                "Android", "iPhone", "WindowsMobile" };
-//
-//        final ArrayList<String> list = new ArrayList<String>();
-//        for (int i = 0; i < values.length; ++i) {
-//            list.add(values[i]);
-//        }
-//        final StableArrayAdapter adapter = new StableArrayAdapter(this,
-//                android.R.layout.simple_list_item_1, list);
-//        listview.setAdapter(adapter);
-//
-//        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, final View view,
-//                                    int position, long id) {
-//                final String item = (String) parent.getItemAtPosition(position);
-//                view.animate().setDuration(2000).alpha(0)
-//                        .withEndAction(new Runnable() {
-//                            @Override
-//                            public void run() {
-//                                list.remove(item);
-//                                adapter.notifyDataSetChanged();
-//                                view.setAlpha(1);
-//                            }
-//                        });
-//            }
-//
-//        });
-//    }
-//
-//    private class StableArrayAdapter extends ArrayAdapter<String> {
-//
-//        HashMap<String, Integer> mIdMap = new HashMap<String, Integer>();
-//
-//        public StableArrayAdapter(Context context, int textViewResourceId,
-//                                  List<String> objects) {
-//            super(context, textViewResourceId, objects);
-//            for (int i = 0; i < objects.size(); ++i) {
-//                mIdMap.put(objects.get(i), i);
-//            }
-//        }
-//
-//        @Override
-//        public long getItemId(int position) {
-//            String item = getItem(position);
-//            return mIdMap.get(item);
-//        }
-//
-//        @Override
-//        public boolean hasStableIds() {
-//            return true;
-//        }
-//
-//    }
-//
-//}
+

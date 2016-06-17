@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_light">
+    <TextView
+        android:id="@+id/reflection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/formTitle"
+        android:textSize="11pt"
+        android:textStyle="bold"
+        android:textAlignment="center"/>
+    
+    <TextView
+        android:id="@+id/timerTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reflection"
+        android:text="@string/timer_label"
+        style="?android:listSeparatorTextViewStyle"/>
+    
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timerTitle"
+        android:text="@string/timer_text"
+        android:textSize="9pt"/>
+    
+
+    <TextView
+        android:id="@+id/location"
+        android:layout_below="@+id/timer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/location_label"
+        style="?android:listSeparatorTextViewStyle"/>
+
+    <EditText
+        android:id="@+id/location_input"
+        android:layout_below="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="@string/locationInput_label"/>
+
+    <TextView
+        android:id="@+id/ppl"
+        android:layout_below="@id/location_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ppl_title_label"
+        style="?android:listSeparatorTextViewStyle"/>
+
+    <RadioGroup
+    android:id="@+id/ppl_group"
+    android:layout_below="@id/ppl"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <RadioButton
+        android:id="@+id/ppl_button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Single"
+        android:onClick="onRadioButtonClicked"/>
+    <RadioButton
+        android:id="@+id/ppl_button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Group"
+        android:onClick="onRadioButtonClicked"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/pro"
+        android:layout_below="@id/ppl_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/pro_title_label"
+        style="?android:listSeparatorTextViewStyle"/>
+
+    <RadioGroup
+        android:id="@+id/pro_group"
+        android:layout_below="@id/pro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/pro_button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Low"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton
+            android:id="@+id/pro_button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medium"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton
+            android:id="@+id/pro_button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="High"
+            android:onClick="onRadioButtonClicked"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/notesTitle"
+        android:layout_below="@+id/pro_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/notes_title_label"
+        style="?android:listSeparatorTextViewStyle"/>
+
+    <EditText
+        android:id="@+id/notes"
+        android:layout_below="@+id/notesTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:maxLines="5"
+        android:textSize="7pt"
+        android:hint="@string/notes_hint"/>
+
+    <Button
+        android:id="@+id/submitForm"
+        android:layout_below="@+id/notes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/submitText"/>
+    <Button
+        android:id="@+id/exitButton"
+        android:layout_below="@+id/submitForm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/exitButton"/>
+
+</RelativeLayout>
